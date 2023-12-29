@@ -15,6 +15,7 @@ jobs:
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
         port: 21
-        server-dir: dellecave.org/valentine/
-        exclude: |
+        server-dir: valentine/
+        xclude: |
           **/.git*
+          **/.git*/**
