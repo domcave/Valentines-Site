@@ -1,0 +1,10 @@
+.cursive {
+    font-family: 'Brush Script MT', cursive;
+}
+
+#yesButton {
+}
+
+#noButton {
+    transition: ease-in-out 400ms;
+}
