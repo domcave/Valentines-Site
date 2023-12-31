@@ -15,3 +15,8 @@ window.onload = function() {
     }, 5000);
 
 }
+
+function showQuiz() {
+    document.getElementById('overlay').style.visibility = 'visible';
+    document.getElementById('overlay').style.zIndex = 2;
+}

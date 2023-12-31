@@ -19,8 +19,24 @@
             <span class="opacity-0 cursive text-center text-white text-3xl transition ease-in duration-1000" id="p1">But wait...</span>
             <span class="opacity-0 cursive text-center text-white text-3xl transition ease-in duration-1000" id="p2">First you must...</span>
             <div class="opacity-0 transition-opacity ease-in duration-1000" id="prove">
-                <button class="rounded-md bg-red-400 w-32 h-14 mx-3 my-4 text-white font-bold transition-colors ease-in duration-150 hover:bg-red-300">Prove Yourself</button>
+                <button class="rounded-md bg-red-400 w-32 h-14 mx-3 my-4 text-white font-bold transition-colors ease-in duration-150 hover:bg-red-300" onclick="showQuiz()">Prove Yourself</button>
             </div>
+        </div>
+    </div>
+    <div class="fixed invisible bg-black/50 w-full h-full flex justify-center items-center transition-opacity duration-500" id="overlay">
+        <div id="quiz-box" class="border-2 bg-white w-96 h-64 drop-shadow-2xl rounded-lg">
+            <div class="w-94 h-3 bg-slate-400 rounded-t-lg">
+                <div class="w-36 h-3 bg-red-500 rounded-t-lg"></div>
+            </div>
+
+            <h1 class="my-3">Question</h1>
+            <button class="bg-slate-300 mx-3 my-4 w-36 h-14 rounded-md">answer 1</button>
+            <button class="bg-slate-300 mx-3 my-4 w-36 h-14 rounded-md">answer 1</button>
+            <button class="bg-slate-300 mx-3 my-4 w-36 h-14 rounded-md">answer 1</button>
+            <button class="bg-slate-300 mx-3 my-4 w-36 h-14 rounded-md">answer 1</button>
+
+            </div>
+
         </div>
     </div>
 </body>
