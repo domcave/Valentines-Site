@@ -17,6 +17,6 @@ window.onload = function() {
 }
 
 function showQuiz() {
-    document.getElementById('overlay').style.visibility = 'visible';
+    document.getElementById('overlay').style.opacity = 1;
     document.getElementById('overlay').style.zIndex = 2;
 }
