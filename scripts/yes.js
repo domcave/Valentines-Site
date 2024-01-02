@@ -3,6 +3,7 @@ let shuffledQuestions = undefined, currentQIndex = undefined;
 let questionElement = document.getElementById('question');
 let answerBtnsElement = document.getElementById('answer-btns');
 const overlayBG = document.getElementById('overlay');
+const progressBar = document.getElementById('progress');
 
 window.onload = function() {
     
@@ -64,6 +65,7 @@ function selectAnswer(e) {
         Array.from(answerBtnsElement.children).forEach(button => {
             button.removeEventListener('click', selectAnswer);
         });
+        updateProgress();
         setTimeout(function() {
             if (shuffledQuestions.length > currentQIndex+1){
                 currentQIndex++;
@@ -90,6 +92,11 @@ function setStatusClass( element, correct ){
 function clearStatusClass( element ) {
     element.classList.remove('correct');
     element.classList.remove('wrong');
+}
+
+function updateProgress() {
+    const newLength = Math.floor(progressBar.parentElement.clientWidth / questions.length) * (currentQIndex+1);
+    progressBar.style.width = `${newLength}px`;
 }
 
 const questions = [
