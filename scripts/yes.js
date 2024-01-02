@@ -22,7 +22,7 @@ window.onload = function() {
 }
 
 function showQuiz() {
-    shuffledQuestions = questions.sort(() => Math.random - 0.5);
+    shuffledQuestions = questions.sort(() => Math.random() - 0.5);
     currentQIndex = 0;
     overlayBG.style.opacity = 1;
     overlayBG.style.zIndex = 2;
@@ -61,6 +61,9 @@ function selectAnswer(e) {
     setStatusClass(overlayBG, correct)
     setStatusClass(selected, correct);
     if (correct) {
+        Array.from(answerBtnsElement.children).forEach(button => {
+            button.removeEventListener('click', selectAnswer);
+        });
         setTimeout(function() {
             if (shuffledQuestions.length > currentQIndex+1){
                 currentQIndex++;
