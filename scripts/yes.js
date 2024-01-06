@@ -72,8 +72,7 @@ function selectAnswer(e) {
                 setNextQuestion();
             }
             else {
-                overlayBG.style.opacity = 0;
-                overlayBG.style.zIndex = -10;
+                window.location.href = "finished.html";
             }
         }, 2000);
     }
