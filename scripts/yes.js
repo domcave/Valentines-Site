@@ -59,9 +59,15 @@ function showQuestion( question ) {
 function selectAnswer(e) {
     const selected = e.target;
     const correct = selected.dataset.correct;
+    const currQuestion = shuffledQuestions[currentQIndex];
     setStatusClass(overlayBG, correct)
     setStatusClass(selected, correct);
     if (correct) {
+        if (currQuestion.question === 'What is the best part about YOU?'){
+            Array.from(answerBtnsElement.children).forEach(button => {
+                setStatusClass(button, correct);
+            });
+        }
         Array.from(answerBtnsElement.children).forEach(button => {
             button.removeEventListener('click', selectAnswer);
         });
@@ -94,7 +100,7 @@ function clearStatusClass( element ) {
 }
 
 function updateProgress() {
-    const newLength = Math.floor(progressBar.parentElement.clientWidth / questions.length) * (currentQIndex+1);
+    const newLength = Math.floor(progressBar.parentElement.clientWidth / questions.length) * (currentQIndex+1) +1;
     progressBar.style.width = `${newLength}px`;
 }
 
@@ -142,6 +148,24 @@ const questions = [
             {text: 'September 23rd', correct: false},
             {text: 'September 11th', correct: false},
             {text: 'September 25th', correct: true}
+        ]
+    },
+    {
+        question: 'What is the best season?',
+        answers: [
+            {text: 'Summer', correct: false},
+            {text: 'Spring', correct: false},
+            {text: 'Winter', correct: false},
+            {text: 'Fall', correct: true}
+        ]
+    },
+    {
+        question: 'What is the best part about YOU?',
+        answers: [
+            {text: 'Your Eyes', correct: true},
+            {text: 'Your Smile', correct: true},
+            {text: 'Your Laugh', correct: true},
+            {text: 'Your Nose', correct: true}
         ]
     },
 ]
